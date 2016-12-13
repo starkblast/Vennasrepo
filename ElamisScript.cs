@@ -14,6 +14,7 @@ public class ElamisScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//transform.Find ("kaunter").GetComponent<SpriteRenderer> ().sprite == kolm;
 		Invoke ("loeAlla", 1f);
 		//InvokeRepeating ("teeUusVend", 0f, vaheldus);
 	}
@@ -29,12 +30,15 @@ public class ElamisScript : MonoBehaviour {
 	}
 
 	void loeAlla() {
-		if (GetComponent<SpriteRenderer> ().sprite == kolm) {
-			GetComponent<SpriteRenderer> ().sprite = kaks;
+		if (transform.Find ("kaunter").GetComponent<SpriteRenderer> ().sprite == kolm) {
+			transform.Find ("kaunter").GetComponent<SpriteRenderer> ().sprite = kaks;
 			Invoke ("loeAlla", 1f);
-		} else if (GetComponent<SpriteRenderer> ().sprite == kaks) {
-			GetComponent<SpriteRenderer> ().sprite = yks;
+		} else if (transform.Find ("kaunter").GetComponent<SpriteRenderer> ().sprite == kaks) {
+			transform.Find ("kaunter").GetComponent<SpriteRenderer> ().sprite = yks;
+			Invoke ("loeAlla", 1f);
 			InvokeRepeating ("teeUusVend", 1f, vaheldus);
+		} else if (transform.Find ("kaunter").GetComponent<SpriteRenderer> ().sprite == yks) {
+			transform.Find ("kaunter").GetComponent<SpriteRenderer> ().color = Color.clear;
 		}
 	}
 }
