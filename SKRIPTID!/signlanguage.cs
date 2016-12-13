@@ -22,15 +22,33 @@ public class signlanguage : MonoBehaviour {
         //if (Input.GetKeyDown(KeyCode.LeftArrow))
         if (lillanupp == false || kollanenupp == false)
         {
-            spriteRenderer.sprite = praegune;
+           // spriteRenderer.sprite = praegune;
         }
         if (lillanupp == true)
         {
-            spriteRenderer.sprite = lillatervitus;
+			lillaAction();
+          //  spriteRenderer.sprite = lillatervitus;
         }
         if (kollanenupp == true)
         {
-            spriteRenderer.sprite = kollanetervitus;
+			kollaneAction ();
+           // spriteRenderer.sprite = kollanetervitus;
         }
+	}
+
+	void lillaAction() {
+		spriteRenderer.sprite = lillatervitus;
+		lillanupp = false;
+		Invoke ("normaalne", 0.35f);
+	}
+
+	void kollaneAction(){
+		kollanenupp = false;
+		spriteRenderer.sprite = kollanetervitus;
+		Invoke ("normaalne", 0.35f);
+	}
+
+	void normaalne () {
+		spriteRenderer.sprite = praegune;
 	}
 }

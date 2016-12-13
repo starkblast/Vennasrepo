@@ -18,9 +18,9 @@ public class NupukateScript : MonoBehaviour {
 		if (transform.name == "m2ngi") {
 			Application.LoadLevel ("main skene");
 		} else if (transform.name == "6petus") {
-			//Application.LoadLevel("tutorial skene");
+			Application.LoadLevel("6petuse skene");
 		} else if (transform.name == "sponsorid") {
-			//Application.LoadLevel("sponsorite skene");
+			Application.LoadLevel("sponsorite skene");
 		}
 	}
 }

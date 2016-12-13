@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class JooksmisScript : MonoBehaviour {
-	public float speed = 0.02f;
+	public float speed = 0.01f;
 	public Sprite lillavend;
 	public Sprite kollanevend;
 	private System.Random rnd = new System.Random();
