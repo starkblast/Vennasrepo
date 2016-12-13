@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ElamisScript : MonoBehaviour {
 	public int elud;
+	public float speed = 0.05f;
 	public GameObject vend;
 	public float vaheldus = 3f;
 	public int skoor = 0;
@@ -14,6 +15,8 @@ public class ElamisScript : MonoBehaviour {
 	private SpriteRenderer elu2;
 	private SpriteRenderer elu3;
 	private GUIStyle stail;
+	private int eelskoor;
+	private bool upd8;
 	//public List<GameObject> jooksjad;
 
 	// Use this for initialization
@@ -29,7 +32,15 @@ public class ElamisScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (eelskoor != skoor) {
+			upd8 = false;
+		}
+		if (skoor % 3 == 0 && skoor > 1 && !upd8) {
+			vaheldus -= 0.05f;
+			upd8 = true;
+		}
+		eelskoor = skoor;
+
 		if (elud == 3) {
 			elu1.color = Color.black;
 			elu2.color = Color.black;
@@ -54,6 +65,8 @@ public class ElamisScript : MonoBehaviour {
 	void teeUusVend() {
 		GameObject uusVend = Instantiate (vend, transform.position, transform.rotation);
 		//jooksjad.Add(uusVend);
+		Invoke("teeUusVend", vaheldus);
+
 	}
 
 	void loeAlla() {
@@ -63,7 +76,7 @@ public class ElamisScript : MonoBehaviour {
 		} else if (transform.Find ("kaunter").GetComponent<SpriteRenderer> ().sprite == kaks) {
 			transform.Find ("kaunter").GetComponent<SpriteRenderer> ().sprite = yks;
 			Invoke ("loeAlla", 1f);
-			InvokeRepeating ("teeUusVend", 1f, vaheldus);
+			Invoke("teeUusVend", vaheldus);
 		} else if (transform.Find ("kaunter").GetComponent<SpriteRenderer> ().sprite == yks) {
 			transform.Find ("kaunter").GetComponent<SpriteRenderer> ().color = Color.clear;
 		}
