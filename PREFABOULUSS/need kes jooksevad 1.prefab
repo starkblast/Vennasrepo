@@ -70,6 +70,13 @@ MonoBehaviour:
   speed: 0.05
   lillavend: {fileID: 21300000, guid: 4c45693731246c841982bb147daeb2c2, type: 3}
   kollanevend: {fileID: 21300000, guid: 50ef9ebea6f06a842932f5f7d8695629, type: 3}
+  lillavend2: {fileID: 21300000, guid: 936aa53d506dce34f8e303d072da2036, type: 3}
+  kollanevend2: {fileID: 21300000, guid: e9d8e58dea3bb694188a4f9b754e227e, type: 3}
+  lillavend3: {fileID: 21300000, guid: a691fc6ae1afab44e81bf93f08d9d4c9, type: 3}
+  kollanevend3: {fileID: 21300000, guid: ac65a4a888e79be4898b3147244a7d50, type: 3}
+  lillavend4: {fileID: 21300000, guid: 73559650121b95d47859665d38182f3f, type: 3}
+  kollanevend4: {fileID: 21300000, guid: ed32ecb3de0ebe340a8aa0c1918dd257, type: 3}
+  man: 
 --- !u!212 &212957137657626114
 SpriteRenderer:
   m_ObjectHideFlags: 1

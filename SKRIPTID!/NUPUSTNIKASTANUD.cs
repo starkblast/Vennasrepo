@@ -23,12 +23,12 @@ public class NUPUSTNIKASTANUD : MonoBehaviour {
 	void OnMouseDown()
     {
 		mees = GameObject.Find ("need kes jooksevad 1(Clone)");
-		SpriteRenderer koll = mees.GetComponent<SpriteRenderer> ();
+		JooksmisScript koll = mees.GetComponent<JooksmisScript> ();
         if (this.name == "KOLLANENUPP") {	
-			if (koll.sprite == kollanevend) {
+			if (koll.man == "kollane") {
 				++GameObject.Find("objekt kus on erinev info").GetComponent<ElamisScript>().skoor;
 				Destroy (mees);
-			} else if (koll.sprite == lillavend) {
+			} else if (koll.man == "lilla") {
 				--GameObject.Find("objekt kus on erinev info").GetComponent<ElamisScript>().elud;
 				mees.GetComponent<JooksmisScript> ().speed = 0;
 				mull = Instantiate (lullikas, new Vector3 (mees.transform.position.x - 0.30f, mees.transform.position.y + 0.80f, transform.position.z), transform.rotation);
@@ -39,10 +39,10 @@ public class NUPUSTNIKASTANUD : MonoBehaviour {
         }
 		else if (this.name == "LILLANUPP")
 		{	
-			if (koll.sprite == lillavend) {
+			if (koll.man == "lilla") {
 				++GameObject.Find("objekt kus on erinev info").GetComponent<ElamisScript>().skoor;
 				Destroy (mees);
-			} else if (koll.sprite == kollanevend) {
+			} else if (koll.man == "kollane") {
 				--GameObject.Find("objekt kus on erinev info").GetComponent<ElamisScript>().elud;
 				mees.GetComponent<JooksmisScript> ().speed = 0;
 				mull = Instantiate (kullikas, new Vector3 (mees.transform.position.x - 0.30f, mees.transform.position.y + 0.80f, transform.position.z), transform.rotation);

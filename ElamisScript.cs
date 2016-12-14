@@ -38,7 +38,7 @@ public class ElamisScript : MonoBehaviour {
 			upd8l = false;
 		}
 		if (skoor % 3 == 0 && skoor > 1 && !upd8) {
-			vaheldus -= 0.05f;
+			vaheldus -= 0.03f;
 			upd8 = true;
 		}
 		if (skoor % 42 == 0 && skoor > 1 && !upd8l && elud < 3) {
