@@ -17,6 +17,7 @@ public class ElamisScript : MonoBehaviour {
 	private GUIStyle stail;
 	private int eelskoor;
 	private bool upd8;
+	private bool upd8l;
 	//public List<GameObject> jooksjad;
 
 	// Use this for initialization
@@ -34,23 +35,28 @@ public class ElamisScript : MonoBehaviour {
 	void Update () {
 		if (eelskoor != skoor) {
 			upd8 = false;
+			upd8l = false;
 		}
 		if (skoor % 3 == 0 && skoor > 1 && !upd8) {
 			vaheldus -= 0.05f;
 			upd8 = true;
 		}
+		if (skoor % 42 == 0 && skoor > 1 && !upd8l && elud < 3) {
+			elud += 1;
+			upd8l = true;
+		}
 		eelskoor = skoor;
 
 		if (elud == 3) {
-			elu1.color = Color.black;
-			elu2.color = Color.black;
-			elu3.color = Color.black;
+			elu1.color = Color.white;
+			elu2.color = Color.white;
+			elu3.color = Color.white;
 		} else if (elud == 2) {
-			elu1.color = Color.black;
-			elu2.color = Color.black;
+			elu1.color = Color.white;
+			elu2.color = Color.white;
 			elu3.color = Color.clear;
 		} else if (elud == 1) {
-			elu1.color = Color.black;
+			elu1.color = Color.white;
 			elu2.color = Color.clear;
 			elu3.color = Color.clear;
 		} else if (elud <= 0) {

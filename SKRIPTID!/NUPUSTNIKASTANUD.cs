@@ -7,6 +7,10 @@ public class NUPUSTNIKASTANUD : MonoBehaviour {
     public bool lillanupp = false;
 	public Sprite lillavend;
 	public Sprite kollanevend;
+	private GameObject mees;
+	private GameObject mull;
+	public GameObject kullikas;
+	public GameObject lullikas;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,15 +22,17 @@ public class NUPUSTNIKASTANUD : MonoBehaviour {
 	}
 	void OnMouseDown()
     {
-		GameObject mees = GameObject.Find ("need kes jooksevad 1(Clone)");
+		mees = GameObject.Find ("need kes jooksevad 1(Clone)");
 		SpriteRenderer koll = mees.GetComponent<SpriteRenderer> ();
         if (this.name == "KOLLANENUPP") {	
 			if (koll.sprite == kollanevend) {
 				++GameObject.Find("objekt kus on erinev info").GetComponent<ElamisScript>().skoor;
 			} else if (koll.sprite == lillavend) {
 				--GameObject.Find("objekt kus on erinev info").GetComponent<ElamisScript>().elud;
+				mees.GetComponent<JooksmisScript> ().speed = 0;
+				mull = Instantiate (lullikas, new Vector3 (mees.transform.position.x - 0.30f, mees.transform.position.y + 0.80f, transform.position.z), transform.rotation);
 			}
-			Destroy(mees);
+			Invoke ("sure", 1f);
             GameObject.Find("see kes kaitseb").GetComponent<signlanguage>().kollanenupp = true;
         }
 		else if (this.name == "LILLANUPP")
@@ -35,8 +41,11 @@ public class NUPUSTNIKASTANUD : MonoBehaviour {
 				++GameObject.Find("objekt kus on erinev info").GetComponent<ElamisScript>().skoor;
 			} else if (koll.sprite == kollanevend) {
 				--GameObject.Find("objekt kus on erinev info").GetComponent<ElamisScript>().elud;
+				mees.GetComponent<JooksmisScript> ().speed = 0;
+				mull = Instantiate (kullikas, new Vector3 (mees.transform.position.x - 0.30f, mees.transform.position.y + 0.80f, transform.position.z), transform.rotation);
+
 			}
-			Destroy(mees);
+			Invoke ("sure", 1f);
             GameObject.Find("see kes kaitseb").GetComponent<signlanguage>().lillanupp = true;
         }
     }
@@ -45,4 +54,9 @@ public class NUPUSTNIKASTANUD : MonoBehaviour {
         kollanenupp = false;
         lillanupp = false;
     }
+
+	void sure() {
+		Destroy (mees);
+		Destroy (mull);
+	}
 }
