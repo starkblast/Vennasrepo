@@ -34,6 +34,5 @@ public class HaihtumisScript : MonoBehaviour {
 			GetComponent<SpriteRenderer> ().color = o;
 
 		}
-		Debug.Log (o.a);
 	}
 }

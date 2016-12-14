@@ -37,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1222277967644354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.74, y: 0.52, z: 0}
-  m_LocalScale: {x: 0.037651107, y: 0.09615703, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,7 +55,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 10.45, y: 20.709997}
+  m_Size: {x: 1.1499999, y: 2.3999999}
 --- !u!114 &114223550736317402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.05
-  lillavend: {fileID: 21300000, guid: 06ba07851ccff8d46be765e076865fdc, type: 3}
-  kollanevend: {fileID: 21300000, guid: 98cc3e400d1c30c48a265fdd2820e44d, type: 3}
+  lillavend: {fileID: 21300000, guid: 4c45693731246c841982bb147daeb2c2, type: 3}
+  kollanevend: {fileID: 21300000, guid: 50ef9ebea6f06a842932f5f7d8695629, type: 3}
 --- !u!212 &212957137657626114
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -101,7 +101,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 98cc3e400d1c30c48a265fdd2820e44d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50ef9ebea6f06a842932f5f7d8695629, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

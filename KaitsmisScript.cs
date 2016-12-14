@@ -16,7 +16,10 @@ public class KaitsmisScript : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D c) {
 		//Debug.Log (c.transform.name);
-		--GameObject.Find ("objekt kus on erinev info").GetComponent<ElamisScript> ().elud;
+		if (c.transform.name == "need kes jooksevad 1(Clone)") {
+			--GameObject.Find ("objekt kus on erinev info").GetComponent<ElamisScript> ().elud;
+			Debug.Log (c.transform.name);
+		}
 		//Destroy (GameObject.Find ("objekt kus on erinev info").GetComponent<ElamisScript> ().jooksjad [0]);
 		//Destroy(c.gameObject);
 	}

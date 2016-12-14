@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1150192696189358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.51, y: -3.04, z: 0}
-  m_LocalScale: {x: 0.31036538, y: 0.30191877, z: 1}
+  m_LocalPosition: {x: -5.05, y: -2.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -69,6 +69,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kollanenupp: 0
   lillanupp: 0
+  lillavend: {fileID: 21300000, guid: 4c45693731246c841982bb147daeb2c2, type: 3}
+  kollanevend: {fileID: 21300000, guid: 50ef9ebea6f06a842932f5f7d8695629, type: 3}
+  kullikas: {fileID: 1156384695684666, guid: 6d5cc7fd4c63d4e46ab83589d8180da3, type: 2}
+  lullikas: {fileID: 1458076662735588, guid: 683c000bf41ffe94882c885256f8573f, type: 2}
 --- !u!212 &212835611628179614
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -100,7 +104,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5e6fe81e27dac534faa1e3607ec36b1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 068a013440632e540b3e3266c30fa6c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

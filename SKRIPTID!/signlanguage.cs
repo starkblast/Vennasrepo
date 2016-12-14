@@ -7,6 +7,8 @@ public class signlanguage : MonoBehaviour {
     public bool kollanenupp = false;
     public Sprite kollanetervitus;
     public Sprite lillatervitus;
+	public Sprite kollanetervitus2;
+	public Sprite lillatervitus2;
     private Sprite praegune;
     private SpriteRenderer spriteRenderer;
 
@@ -39,13 +41,22 @@ public class signlanguage : MonoBehaviour {
 	void lillaAction() {
 		spriteRenderer.sprite = lillatervitus;
 		lillanupp = false;
-		Invoke ("normaalne", 0.35f);
+		Invoke ("Action2", 0.15f);
 	}
 
 	void kollaneAction(){
 		kollanenupp = false;
 		spriteRenderer.sprite = kollanetervitus;
-		Invoke ("normaalne", 0.35f);
+		Invoke ("Action2", 0.25f);
+	}
+
+	void Action2() {
+		if (spriteRenderer.sprite == kollanetervitus) {
+			spriteRenderer.sprite = kollanetervitus2;
+		} else {
+			spriteRenderer.sprite = lillatervitus2;
+		}
+		Invoke ("normaalne", 0.25f);
 	}
 
 	void normaalne () {
