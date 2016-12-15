@@ -172,9 +172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elud: 3
-  speed: 0.02
+  speed: 0.032
   vend: {fileID: 1222277967644354, guid: e899dbb159db5c441a788bd53f823ef5, type: 2}
-  vaheldus: 1.2
+  vaheldus: 0.83
   skoor: 0
   kolm: {fileID: 21300000, guid: 4b68d691202a4e0489855dbffbfccfc3, type: 3}
   kaks: {fileID: 21300000, guid: a0859114a1840c244a5cc3fd608e63ee, type: 3}

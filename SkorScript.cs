@@ -17,7 +17,10 @@ public class SkorScript : MonoBehaviour {
 	void OnGUI() {
 		stail = new GUIStyle(GUI.skin.label);
 		stail.normal.textColor = Color.magenta;
-		stail.fontSize = 30;
-		GUI.Label(new Rect(Screen.width/2-80, Screen.height/2+10, 400, 40),"haiskoor: "+ PlayerPrefs.GetInt("haiskoor").ToString(), stail);
+		stail.fontSize = 20;
+		GUI.Label(new Rect(Screen.width/2-60, Screen.height/2+10, 400, 40),"haiskoor: "+ PlayerPrefs.GetInt("haiskoor").ToString(), stail);
+		if (PlayerPrefs.HasKey("total")) {
+			GUI.Label(new Rect(Screen.width/2-60, Screen.height/2+33, 400, 40), "koguskoor: " + PlayerPrefs.GetInt("total").ToString(), stail);
+		}
 	}
 }

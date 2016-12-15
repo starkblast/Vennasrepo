@@ -37,9 +37,9 @@ public class JooksmisScript : MonoBehaviour {
 		if (eelskoor != skoor) {
 			upd8 = false;
 		}
-		if (skoor % 3 == 0 && skoor > 1 && !upd8) {
+		if (skoor % 3 == 0 && skoor > 1 && !upd8 && skoor < 150) {
 			
-			GameObject.Find ("objekt kus on erinev info").GetComponent<ElamisScript> ().speed += 0.003f;
+			GameObject.Find ("objekt kus on erinev info").GetComponent<ElamisScript> ().speed += 0.002f;
 			speed = GameObject.Find ("objekt kus on erinev info").GetComponent<ElamisScript> ().speed;
 			upd8 = true;
 		}

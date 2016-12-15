@@ -37,8 +37,8 @@ public class ElamisScript : MonoBehaviour {
 			upd8 = false;
 			upd8l = false;
 		}
-		if (skoor % 3 == 0 && skoor > 1 && !upd8) {
-			vaheldus -= 0.03f;
+		if (skoor % 3 == 0 && skoor > 1 && !upd8 && vaheldus >= 0.25) {
+			vaheldus = vaheldus * 0.975f;
 			upd8 = true;
 		}
 		if (skoor % 42 == 0 && skoor > 1 && !upd8l && elud < 3) {
@@ -64,6 +64,12 @@ public class ElamisScript : MonoBehaviour {
 			if (PlayerPrefs.GetInt ("haiskoor") < skoor) {
 				PlayerPrefs.SetInt ("haiskoor", skoor);
 			}
+			if (PlayerPrefs.HasKey("total")) {
+				PlayerPrefs.SetInt ("total", PlayerPrefs.GetInt("total") + skoor);
+			} else {
+				PlayerPrefs.SetInt("total", skoor);
+			}
+			PlayerPrefs.SetInt ("skoor", skoor);
 			Application.LoadLevel ("surma skene");
 		}
 	}
@@ -92,6 +98,6 @@ public class ElamisScript : MonoBehaviour {
 		stail = new GUIStyle(GUI.skin.label);
 		stail.normal.textColor = Color.black;
 		stail.fontSize = 30;
-		GUI.Label(new Rect(Screen.width/2-20, Screen.height-100, 40, 40), skoor.ToString(), stail);
+		GUI.Label(new Rect(Screen.width/2-20, Screen.height-100, 400, 40), skoor.ToString(), stail);
 	}
 }
